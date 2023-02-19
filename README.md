@@ -3,9 +3,9 @@
 
 # DbSet<> objects                     
 - Users
-- ForSaleItems
-- ItemsSold
-- ItemReviews
+- Items
+- Auctions
+- Bidders
 
 # Project overview
 ### The goal is to create a Auction website users should be able to:
