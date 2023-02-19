@@ -7,6 +7,8 @@
 - Auctions
 - Bidders
 
+![My Image](data-base.jpg)
+
 # Project overview
 ### The goal is to create a Auction website users should be able to:
 
