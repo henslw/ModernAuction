@@ -14,7 +14,7 @@ namespace ModernAuction
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
-            var connectionString2 = builder.Configuration.GetConnectionString("AuctionContext") ?? throw new InvalidOperationException("Connection string 'AuctionContext' not found.");
+            var connectionString2 = builder.Configuration.GetConnectionString("AuctionDbContext") ?? throw new InvalidOperationException("Connection string 'AuctionContext' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
             builder.Services.AddDbContext<AuctionDbContext>(options =>
