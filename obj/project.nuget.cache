@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qW4JUWZSSmoXtw9LekQrTnQmtbsB/t4mXMpgGFsvXj4jLklfM56gEI4EcfKPD6XYz8moLgukCARxvBkgem0LgA==",
+  "dgSpecHash": "am0dpXvUhmSwCsOq1mLV1tv9jImjI9RILJOjTBzVcCapgBs0Cd+i2ylBATGKFNzW22CBW+QwJm/xrTam3NJ6ZQ==",
   "success": true,
-  "projectFilePath": "C:\\projects-tinfo431\\ModernAuction\\ModernAuction.csproj",
+  "projectFilePath": "C:\\Users\\Hensley\\Source\\Repos\\ModernAuction\\ModernAuction.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hensley\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Hensley\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
