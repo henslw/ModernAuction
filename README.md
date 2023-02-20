@@ -3,9 +3,9 @@
 
 # DbSet<> objects                     
 - Users
-- Items
-- Auctions
-- Bidders
+- Item
+- Auction
+- Bidder
 
 ![My Image](data-base.jpg)
 
