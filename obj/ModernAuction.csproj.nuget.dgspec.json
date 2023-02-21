@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hensley\\Source\\Repos\\ModernAuction\\ModernAuction.csproj": {}
+    "C:\\Users\\Hensley\\source\\repos\\ModernAuction\\ModernAuction.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hensley\\Source\\Repos\\ModernAuction\\ModernAuction.csproj": {
+    "C:\\Users\\Hensley\\source\\repos\\ModernAuction\\ModernAuction.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hensley\\Source\\Repos\\ModernAuction\\ModernAuction.csproj",
+        "projectUniqueName": "C:\\Users\\Hensley\\source\\repos\\ModernAuction\\ModernAuction.csproj",
         "projectName": "ModernAuction",
-        "projectPath": "C:\\Users\\Hensley\\Source\\Repos\\ModernAuction\\ModernAuction.csproj",
+        "projectPath": "C:\\Users\\Hensley\\source\\repos\\ModernAuction\\ModernAuction.csproj",
         "packagesPath": "C:\\Users\\Hensley\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hensley\\Source\\Repos\\ModernAuction\\obj\\",
+        "outputPath": "C:\\Users\\Hensley\\source\\repos\\ModernAuction\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hensley\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -42,7 +42,7 @@
           "dependencies": {
             "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.3, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -60,11 +60,17 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.3, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.1, )"
+              "version": "[7.0.3, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.4, )"
             }
           },
           "imports": [

@@ -4,8 +4,7 @@
     {
         public int AuctionId { get; set; }
         public DateTime AuctionStartTime { get; set; }
-        public DateTime AuctionEndTime { get; set;
-        }
+        public DateTime AuctionEndTime { get; set;}
         public decimal FinalPrice { get; set; }
         public decimal Currentprice { get; set; }
         public int Bids { get; set; }

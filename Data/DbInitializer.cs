@@ -18,10 +18,10 @@ namespace ModernAuction.Data
 
             var items = new Item[]
             {
-                new Item{ ItemID= 122343, Userid= "4655758",ItemDescription ="Samsung Headphones" ,StartingPrice = 5.99m,
+                new Item{ ItemID= "122343", Userid= "4655758",ItemDescription ="Samsung Headphones" ,StartingPrice = 5.99m,
                      IsSold = false },
 
-                new Item{ ItemID= 909009, Userid= "343533234",ItemDescription ="TV" ,StartingPrice = 599.99m,
+                new Item{ ItemID= "909009", Userid= "343533234",ItemDescription ="TV" ,StartingPrice = 599.99m,
                      IsSold = false }
             };
 

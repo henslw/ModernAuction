@@ -1,8 +1,10 @@
-﻿namespace ModernAuction.Models
+﻿using System;
+using System.Collections.Generic;
+namespace ModernAuction.Models
 {
     public class Item
     {
-        public int ItemID { get; set; }
+        public string ItemID { get; set; } = string.Empty;
         public string Userid { get; set; } = string.Empty;
         public string ItemDescription { get; set; } = string.Empty;
         public Decimal StartingPrice { get; set; }

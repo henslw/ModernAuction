@@ -8,15 +8,15 @@ namespace ModernAuction.Data
         {
         }
 
-        public DbSet<Item> Items { get; set; }
-        public DbSet<Auction> Auctions { get; set; }
         public DbSet<Bidder> Bidders { get; set; }
+        public DbSet<Auction> Auctions { get; set; }
+        public DbSet<Item> Items { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Bidder>().ToTable("Bidder");
+            modelBuilder.Entity<Auction>().ToTable("Auction");
             modelBuilder.Entity<Item>().ToTable("Item");
-            modelBuilder.Entity<Item>().ToTable("Auction");
-            modelBuilder.Entity<Item>().ToTable("Bidder");
         }
 
     }
