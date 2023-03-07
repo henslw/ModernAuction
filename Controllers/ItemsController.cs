@@ -34,9 +34,14 @@ namespace ModernAuction.Controllers
             {
                 return NotFound();
             }
-
+            
             var item = await _context.Items
+                .Include(i => i.Auctions)
+                    .ThenInclude( a => a.Bidder)
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ItemID == id);
+
+
             if (item == null)
             {
                 return NotFound();

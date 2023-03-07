@@ -34,6 +34,28 @@
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.IsSold)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Auctions)
+</dt>
+<dd class="col-sm-10">
+    <table class="table">
+        <tr>
+            <th>Auction Start Time</th>
+            <th>Current price</th>
+        </tr>
+                @foreach (var item in Model.Auctions)
+                {
+                <tr>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.AuctionStartTime)
+                    </td>
+                    <td>
+                            @Html.DisplayFor(modelItem => item.Currentprice)
+                    </td>
+                </tr>
+                }
+    </table>
+</dd>
     </dl>
 </div>
 <div>

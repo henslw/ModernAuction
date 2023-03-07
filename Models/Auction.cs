@@ -9,6 +9,7 @@
         public decimal Currentprice { get; set; }
         public int Bids { get; set; }
         public bool AuctionActive { get; set; }
+        public string ItemID { get; set; }
 
         public Bidder Bidder { get; set; }
         public Item Item { get; set; }
