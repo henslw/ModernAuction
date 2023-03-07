@@ -2,7 +2,7 @@
 {
     public class Auction
     {
-        public int AuctionId { get; set; }
+        public string AuctionID { get; set; }  = string.Empty;
         public DateTime AuctionStartTime { get; set; }
         public DateTime AuctionEndTime { get; set;}
         public decimal FinalPrice { get; set; }
