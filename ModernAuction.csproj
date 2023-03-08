@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-ModernAuction-5138ae4b-2e73-49e5-aae7-804df7afe477</UserSecretsId>
   </PropertyGroup>

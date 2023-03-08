@@ -91,36 +91,34 @@ namespace ModernAuction.Controllers
         // POST: Items/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("ItemID,Userid,ItemDescription,StartingPrice,IsSold")] Item item)
+        public async Task<IActionResult> EditPost(string id)
         {
-            if (id != item.ItemID)
+            if (id == null)
             {
                 return NotFound();
             }
-
-            if (ModelState.IsValid)
+            var itemToUpdate = await _context.Items.FirstOrDefaultAsync(s => String.Equals(s.ItemID, id));
+            if (await TryUpdateModelAsync<Item>(
+                itemToUpdate,
+                "",
+                s => s.Userid, s => s.ItemDescription, s => s.StartingPrice, s => s.IsSold))
             {
                 try
                 {
-                    _context.Update(item);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (DbUpdateException /* ex */)
                 {
-                    if (!ItemExists(item.ItemID))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    //Log the error (uncomment ex variable name and write a log.)
+                    ModelState.AddModelError("", "Unable to save changes. " +
+                        "Try again, and if the problem persists, " +
+                        "see your system administrator.");
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(item);
+            return View(itemToUpdate);
         }
 
         // GET: Items/Delete/5
