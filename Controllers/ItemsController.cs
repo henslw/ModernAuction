@@ -20,11 +20,49 @@ namespace ModernAuction.Controllers
         }
 
         // GET: Items
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string sortOrder, string searchString,
+    string currentFilter,
+    int? pageNumber)
         {
-              return _context.Items != null ? 
-                          View(await _context.Items.ToListAsync()) :
-                          Problem("Entity set 'AuctionDbContext.Items'  is null.");
+            ViewData["CurrentSort"] = sortOrder;
+            ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            ViewData["CurrentFilter"] = searchString;
+            //ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
+
+
+            if (searchString != null)
+            {
+                pageNumber = 1;
+            }
+            else
+            {
+                searchString = currentFilter;
+            }
+
+            var items = from s in _context.Items
+                       select s;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                items = items.Where(s => s.ItemDescription.Contains(searchString)
+                                       /*|| s.FirstMidName.Contains(searchString)*/);
+            }
+            switch (sortOrder)
+            {
+                case "name_desc":
+                    items = items.OrderByDescending(s => s.ItemDescription);
+                    break;
+                //case "Date":
+                //    item = item.OrderBy(s => s.StartingPrice);
+                //    break;
+                //case "date_desc":
+                //    item = item.OrderByDescending(s => s.EnrollmentDate);
+                //    break;
+                default:
+                    items = items.OrderBy(s => s.ItemDescription);
+                    break;
+            }
+            int pageSize = 3;
+            return View(await PaginatedList<Item>.CreateAsync(items.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
         // GET: Items/Details/5
@@ -34,10 +72,10 @@ namespace ModernAuction.Controllers
             {
                 return NotFound();
             }
-            
+
             var item = await _context.Items
                 .Include(i => i.Auctions)
-                    .ThenInclude( a => a.Bidder)
+                    .ThenInclude(a => a.Bidder)
                 .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ItemID == id);
 
@@ -122,7 +160,7 @@ namespace ModernAuction.Controllers
         }
 
         // GET: Items/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(string id, bool? saveChangesError = false)
         {
             if (id == null || _context.Items == null)
             {
@@ -130,10 +168,18 @@ namespace ModernAuction.Controllers
             }
 
             var item = await _context.Items
+                .AsNoTracking()
                 .FirstOrDefaultAsync(m => m.ItemID == id);
             if (item == null)
             {
                 return NotFound();
+            }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ViewData["ErrorMessage"] =
+                    "Delete failed. Try again, and if the problem persists " +
+                    "see your system administrator.";
             }
 
             return View(item);
@@ -144,23 +190,23 @@ namespace ModernAuction.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            if (_context.Items == null)
-            {
-                return Problem("Entity set 'AuctionDbContext.Items'  is null.");
-            }
             var item = await _context.Items.FindAsync(id);
-            if (item != null)
+            if (item == null)
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            try
             {
                 _context.Items.Remove(item);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
             }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool ItemExists(string id)
-        {
-          return (_context.Items?.Any(e => e.ItemID == id)).GetValueOrDefault();
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction(nameof(Delete), new { id = id, saveChangesError = true });
+            }
         }
     }
-}
+    }
