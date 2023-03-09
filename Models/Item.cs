@@ -7,7 +7,8 @@ namespace ModernAuction.Models
 {
     public class Item
     {
-        public string ItemID { get; set; } = string.Empty;
+        [Key]
+        public int ItemID { get; set; }
         public string Userid { get; set; } = string.Empty;
         [Required]
         [RegularExpression(@"^[a-zA-Z''-'\s]{1,40}$",

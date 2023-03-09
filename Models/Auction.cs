@@ -6,7 +6,8 @@ namespace ModernAuction.Models
 {
     public class Auction
     {
-        public string AuctionID { get; set; }  = string.Empty;
+        [Key]
+        public int AuctionID { get; set; }
         public DateTime AuctionStartTime { get; set; }
         public DateTime AuctionEndTime { get; set;}
         [DataType(DataType.Currency)]
@@ -17,7 +18,7 @@ namespace ModernAuction.Models
         [DisplayFormat(NullDisplayText = "No Bids")]
         public int Bids { get; set; }
         public bool AuctionActive { get; set; }
-        public string ItemID { get; set; }
+        public int ItemID { get; set; }
 
         public Bidder Bidder { get; set; }
         public Item Item { get; set; }

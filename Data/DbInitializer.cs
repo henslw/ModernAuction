@@ -18,10 +18,10 @@ namespace ModernAuction.Data
 
             var items = new Item[]
             {
-                new Item{ ItemID= "122343", Userid= "7b81623d-55f0-4b0e-9362-0c0bf3cd0f96",ItemDescription ="Samsung Headphones" ,StartingPrice = 5.99m,
+                new Item{ Userid= "7b81623d-55f0-4b0e-9362-0c0bf3cd0f96",ItemDescription ="Samsung Headphones" ,StartingPrice = 5.99m,
                      IsSold = false },
 
-                new Item{ ItemID= "909009", Userid= "343533234",ItemDescription ="TV" ,StartingPrice = 599.99m,
+                new Item{ Userid= "343533234",ItemDescription ="TV" ,StartingPrice = 599.99m,
                      IsSold = false }
             };
 
@@ -34,8 +34,8 @@ namespace ModernAuction.Data
 
             var auctions = new Auction[]
             {
-                new Auction{ AuctionID = "352353", AuctionActive = true, AuctionEndTime = DateTime.MaxValue, Currentprice = 5.99m, AuctionStartTime =DateTime.Now , ItemID = "122343"     },
-                new Auction{ AuctionID = "667866", AuctionActive = true, AuctionEndTime = DateTime.MaxValue, Currentprice = 599.99m, AuctionStartTime =DateTime.Now, ItemID = "909009"   }
+                new Auction{ AuctionID = 25, AuctionActive = true, AuctionEndTime = DateTime.MaxValue, Currentprice = 5.99m, AuctionStartTime =DateTime.Now , ItemID = 1     },
+                new Auction{ AuctionID = 35, AuctionActive = true, AuctionEndTime = DateTime.MaxValue, Currentprice = 599.99m, AuctionStartTime =DateTime.Now, ItemID = 2  }
             };
 
             foreach (Auction a in auctions)
@@ -47,8 +47,8 @@ namespace ModernAuction.Data
 
             var bidders = new Bidder[]
             {
-                new Bidder{ BidAmount = 9.99m, BidderID = "898797"  },
-                new Bidder{ BidAmount = 49.99m, BidderID = "58764"  }
+                new Bidder{ BidAmount = 9.99m, BidderID = 898797  },
+                new Bidder{ BidAmount = 49.99m, BidderID = 58764  }
             };
 
             foreach (Bidder b in bidders)
