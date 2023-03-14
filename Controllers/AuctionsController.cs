@@ -29,7 +29,7 @@ namespace ModernAuction.Controllers
             ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
             ViewData["DateSortParm"] = sortOrder == "Date" ? "date_desc" : "Date";
-
+            //ViewData["CurrentFilter"] = searchString;
             if (searchString != null)
             {
                 pageNumber = 1;
@@ -39,7 +39,7 @@ namespace ModernAuction.Controllers
                 searchString = currentFilter;
             }
 
-            ViewData["CurrentFilter"] = searchString;
+            
             var auctions = from s in _context.Auctions
                            select s;
 
@@ -64,7 +64,7 @@ namespace ModernAuction.Controllers
                     auctions = auctions.OrderBy(s => s.Item.ItemDescription );
                     break;
             }
-            int pageSize = 3;
+            int pageSize = 5;
             return View(await PaginatedList<Auction>.CreateAsync(auctions.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 

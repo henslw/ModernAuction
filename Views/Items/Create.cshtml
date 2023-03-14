@@ -4,7 +4,6 @@
     ViewData["Title"] = "Sell An Item";
 }
 
-<h1>Create</h1>
 
 <h4>Item</h4>
 <hr />
@@ -12,16 +11,16 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="ItemID" class="control-label"></label>
                 <input asp-for="ItemID" class="form-control" />
                 <span asp-validation-for="ItemID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+@*            <div class="form-group">
                 <label asp-for="Userid" class="control-label"></label>
                 <input asp-for="Userid" class="form-control" />
                 <span asp-validation-for="Userid" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="ItemDescription" class="control-label"></label>
                 <input asp-for="ItemDescription" class="form-control" />

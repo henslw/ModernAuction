@@ -7,7 +7,7 @@
 <h1>User Item Inventory</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add Item to Inventory</a>
 </p>
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
@@ -21,9 +21,9 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+@*            <th>
                 User id
-            </th>
+            </th>*@
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Item Name</a>
             </th>
@@ -39,9 +39,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+@*            <td>
                 @Html.DisplayFor(modelItem => item.Userid)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.ItemDescription)
             </td>

@@ -1,7 +1,7 @@
 ﻿@model ModernAuction.Models.Auction
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "bid";
 }
 
 <h1>Edit</h1>
@@ -13,43 +13,44 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="AuctionID" />
-            <div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="AuctionStartTime" class="control-label"></label>
                 <input asp-for="AuctionStartTime" class="form-control" />
                 <span asp-validation-for="AuctionStartTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+@*            <div class="form-group">
                 <label asp-for="AuctionEndTime" class="control-label"></label>
                 <input asp-for="AuctionEndTime" class="form-control" />
                 <span asp-validation-for="AuctionEndTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
+            </div>*@
+ @*           <div class="form-group">
                 <label asp-for="FinalPrice" class="control-label"></label>
                 <input asp-for="FinalPrice" class="form-control" />
                 <span asp-validation-for="FinalPrice" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <label asp-for="Currentprice" class="control-label"></label>
+                <label for="" class="control-label">Current Highest Bid</label>
                 <input asp-for="Currentprice" class="form-control" />
                 <span asp-validation-for="Currentprice" class="text-danger"></span>
             </div>
-            <div class="form-group">
+@*            <div class="form-group">
                 <label asp-for="Bids" class="control-label"></label>
                 <input asp-for="Bids" class="form-control" />
                 <span asp-validation-for="Bids" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
+            </div>*@
+@*            <div class="form-group form-check">
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="AuctionActive" /> @Html.DisplayNameFor(model => model.AuctionActive)
                 </label>
-            </div>
+            </div>*@
+            
             <div class="form-group">
-                <label asp-for="ItemID" class="control-label"></label>
+                <label for="ItemID" class="control-label">Item To Be Bid on</label>
                 <select asp-for="ItemID" class="form-control" asp-items="ViewBag.ItemID"></select>
                 <span asp-validation-for="ItemID" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Place bid" class="btn btn-primary" />
             </div>
         </form>
     </div>

@@ -6,9 +6,9 @@
 
 <h1>Auctions</h1>
 
-<p>
+@*<p>
     <a asp-action="Create">Create New</a>
-</p>
+</p>*@
 
 <form asp-action="Index" method="get">
     <div class="form-actions no-color">
@@ -24,7 +24,7 @@
     <thead>
         <tr>
             <th>
-                <a asp-action="Index" asp-route-sortOrder="@ViewData["NameSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Item Description</a>
+                Item Description
             </th>
             <th>
                 <a asp-action="Index" asp-route-sortOrder="@ViewData["DateSortParm"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">AuctionStartTime</a>
@@ -45,10 +45,11 @@
         </tr>
     </thead>
     <tbody>
+
 @foreach (var item in Model) {
         <tr>
             <td>
-               @Html.DisplayFor(modelItem => item.Item.ItemDescription)
+              @Html.DisplayFor(modelItem => @item.Item.ItemDescription)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.AuctionStartTime)
@@ -67,7 +68,7 @@
             </td>
 
             <td>
-                <a asp-action="Edit" asp-route-id="@item.AuctionID">Edit</a> |
+                <a asp-action="Edit" asp-route-id="@item.AuctionID">Bid</a> |
                 <a asp-action="Details" asp-route-id="@item.AuctionID">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.AuctionID">Delete</a>
             </td>

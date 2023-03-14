@@ -61,7 +61,7 @@ namespace ModernAuction.Controllers
                     items = items.OrderBy(s => s.ItemDescription);
                     break;
             }
-            int pageSize = 3;
+            int pageSize = 5;
             return View(await PaginatedList<Item>.CreateAsync(items.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
