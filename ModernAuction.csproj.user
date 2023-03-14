@@ -2,6 +2,19 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
+    <_SelectedScaffolderID>MvcControllerWithContextScaffolder</_SelectedScaffolderID>
+    <_SelectedScaffolderCategoryPath>root/Common</_SelectedScaffolderCategoryPath>
+    <WebStackScaffolding_ControllerDialogWidth>650</WebStackScaffolding_ControllerDialogWidth>
+    <WebStackScaffolding_IsLayoutPageSelected>True</WebStackScaffolding_IsLayoutPageSelected>
+    <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
+    <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
+    <WebStackScaffolding_LayoutPageFile />
+    <WebStackScaffolding_DbContextTypeFullName>ModernAuction.Data.AuctionDbContext</WebStackScaffolding_DbContextTypeFullName>
+    <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+    <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <RazorPage_SelectedScaffolderID>RazorPageScaffolder</RazorPage_SelectedScaffolderID>
+    <RazorPage_SelectedScaffolderCategoryPath>root/Common/RazorPage</RazorPage_SelectedScaffolderCategoryPath>
+    <WebStackScaffolding_EnablerDialogWidth>650</WebStackScaffolding_EnablerDialogWidth>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

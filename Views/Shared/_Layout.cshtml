@@ -23,10 +23,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Items For Sale</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Items" asp-action="Index">User Item Inventory</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Sell</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Auctions" asp-action="Create">Put Item Up For Auction</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Auctions" asp-action="Index">Auctions</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Bidders" asp-action="Index">User Bid History</a>
                         </li>
                     </ul>
                     <partial name="_LoginPartial" />

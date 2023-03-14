@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ModernAuction.Models.Bidder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Bid History</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BidderUserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BidderAuctionID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BidAmount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidderUserID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidderAuctionID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BidAmount)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BidderID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BidderID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BidderID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
