@@ -34,8 +34,8 @@ namespace ModernAuction.Data
 
             var auctions = new Auction[]
             {
-                new Auction{ AuctionID = 25, AuctionActive = true, AuctionEndTime = DateTime.MaxValue, Currentprice = 5.99m, AuctionStartTime =DateTime.Now , ItemID = 1     },
-                new Auction{ AuctionID = 35, AuctionActive = true, AuctionEndTime = DateTime.MaxValue, Currentprice = 599.99m, AuctionStartTime =DateTime.Now, ItemID = 2  }
+                new Auction{ AuctionActive = true, AuctionEndTime = DateTime.Now.AddDays(7), Currentprice = 5.99m, AuctionStartTime =DateTime.Now.Date , ItemID = 1     },
+                new Auction{ AuctionActive = true, AuctionEndTime = DateTime.Now.AddDays(7), Currentprice = 599.99m, AuctionStartTime =DateTime.Now.Date, ItemID = 2  }
             };
 
             foreach (Auction a in auctions)
@@ -47,8 +47,8 @@ namespace ModernAuction.Data
 
             var bidders = new Bidder[]
             {
-                new Bidder{ BidAmount = 9.99m, BidderID = 898797  },
-                new Bidder{ BidAmount = 49.99m, BidderID = 58764  }
+                new Bidder{ BidAmount = 9.99m },
+                new Bidder{ BidAmount = 49.99m  }
             };
 
             foreach (Bidder b in bidders)

@@ -20,6 +20,9 @@ namespace ModernAuction.Models
         public bool AuctionActive { get; set; }
         public int ItemID { get; set; }
 
+        [Timestamp]
+        public byte[] RowVersion { get; set; }
+
         public Bidder Bidder { get; set; }
         public Item Item { get; set; }
     }

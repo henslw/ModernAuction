@@ -20,6 +20,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Hensley/source/repos/ModernAuction/Views/Auctions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvbnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hensley/source/repos/ModernAuction/Views/Auctions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvbnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hensley/source/repos/ModernAuction/Views/Auctions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvbnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hensley/source/repos/ModernAuction/Views/Auctions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvbnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Hensley/source/repos/ModernAuction/Views/Auctions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXVjdGlvbnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Hensley/source/repos/ModernAuction/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
